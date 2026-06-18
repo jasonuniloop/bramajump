@@ -1,0 +1,19 @@
+# Local Netlify folder
+.netlify
+
+# Internal archives and working documents
+Bramajump 2025/
+Bramajump 2026/
+diplome/
+Documents administratifs/
+Medias pendulaire/
+Partenaires/
+Ressources techniques/
+site web/
+tools/
+assets/docs/
+
+# Local audits and source snapshots
+*.tmp
+index.optimized-custom.html
+index.webflow-original.html
