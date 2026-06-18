@@ -12,6 +12,9 @@ Ressources techniques/
 site web/
 tools/
 assets/docs/
+node_modules/
+package.json
+package-lock.json
 
 # Local audits and source snapshots
 *.tmp
