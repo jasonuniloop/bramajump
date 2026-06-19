@@ -620,6 +620,30 @@ margin: 0rem !important;
     line-height: 1;
   }
 
+  .bramajump-clean-nav__phone {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    border-radius: 6px;
+    color: #fff !important;
+    background: #e65100;
+    box-shadow: 0 6px 18px rgba(32, 18, 16, .18);
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    text-shadow: none !important;
+    white-space: nowrap;
+  }
+
+  .bramajump-clean-nav__phone:hover,
+  .bramajump-clean-nav__phone:focus-visible {
+    background: #c94300;
+  }
+
   .bramajump-clean-nav__links {
     display: flex;
     align-items: center;
@@ -678,14 +702,23 @@ margin: 0rem !important;
   @media (max-width: 991px) {
     .bramajump-clean-nav__inner {
       min-height: 66px;
+      gap: 10px;
     }
 
     .bramajump-clean-nav__brand {
       font-size: 26px;
     }
 
+    .bramajump-clean-nav__phone {
+      min-height: 38px;
+      margin-left: auto;
+      padding: 0 10px;
+      font-size: 13px;
+    }
+
     .bramajump-clean-nav__toggle {
       display: block;
+      flex: 0 0 44px;
     }
 
     .bramajump-clean-nav__links {
@@ -708,6 +741,21 @@ margin: 0rem !important;
 
     .bramajump-clean-nav__links a {
       text-shadow: none;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .bramajump-clean-nav__inner {
+      gap: 6px;
+    }
+
+    .bramajump-clean-nav__brand {
+      font-size: 21px;
+    }
+
+    .bramajump-clean-nav__phone {
+      padding: 0 7px;
+      font-size: 12px;
     }
   }
 
@@ -882,7 +930,7 @@ margin: 0rem !important;
     if (!document.querySelector('.bramajump-clean-nav')) {
       var nav = document.createElement('header');
       nav.className = 'bramajump-clean-nav';
-      nav.innerHTML = '<div class="bramajump-clean-nav__inner"><a class="bramajump-clean-nav__brand" href="#top">BRAMAJUMP</a><button class="bramajump-clean-nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="bramajump-clean-nav__links" aria-label="Navigation principale"><a href="#tarifs">Tarifs</a><a href="#decouverte">Comment ça marche ?</a><a href="#infos">Infos pratique</a><a href="#demande">Contact</a><a class="bramajump-clean-nav__cta" href="#reserve">Réserver</a></nav></div>';
+      nav.innerHTML = '<div class="bramajump-clean-nav__inner"><a class="bramajump-clean-nav__brand" href="#top">BRAMAJUMP</a><a class="bramajump-clean-nav__phone" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a><button class="bramajump-clean-nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="bramajump-clean-nav__links" aria-label="Navigation principale"><a href="#tarifs">Tarifs</a><a href="#decouverte">Comment ça marche ?</a><a href="#infos">Infos pratique</a><a href="#demande">Contact</a><a class="bramajump-clean-nav__cta" href="#reserve">Réserver</a></nav></div>';
       document.body.prepend(nav);
     }
 
