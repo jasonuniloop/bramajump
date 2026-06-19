@@ -621,27 +621,34 @@ margin: 0rem !important;
   }
 
   .bramajump-clean-nav__phone {
-    display: inline-flex;
-    min-height: 40px;
-    align-items: center;
-    justify-content: center;
-    padding: 0 14px;
-    border-radius: 6px;
-    color: #fff !important;
-    background: #e65100;
-    box-shadow: 0 6px 18px rgba(32, 18, 16, .18);
     font-family: Montserrat, Arial, sans-serif;
-    font-size: 15px;
     font-weight: 900;
     line-height: 1;
     text-decoration: none;
-    text-shadow: none !important;
     white-space: nowrap;
   }
 
-  .bramajump-clean-nav__phone:hover,
-  .bramajump-clean-nav__phone:focus-visible {
-    background: #c94300;
+  .bramajump-clean-nav__phone--mobile {
+    display: none;
+  }
+
+  .bramajump-clean-nav__actions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .bramajump-clean-nav__phone--desktop {
+    color: inherit;
+    font-size: 13px !important;
+    text-shadow: 0 1px 8px rgba(255, 221, 159, .32);
+  }
+
+  .bramajump-clean-nav__phone--desktop:hover,
+  .bramajump-clean-nav__phone--desktop:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .bramajump-clean-nav__links {
@@ -659,7 +666,7 @@ margin: 0rem !important;
 
   .bramajump-clean-nav__cta {
     display: inline-flex;
-    min-height: 44px;
+    min-height: 38px;
     align-items: center;
     justify-content: center;
     padding: 0 18px;
@@ -709,11 +716,24 @@ margin: 0rem !important;
       font-size: 26px;
     }
 
-    .bramajump-clean-nav__phone {
+    .bramajump-clean-nav__phone--mobile {
+      display: inline-flex;
       min-height: 38px;
+      align-items: center;
+      justify-content: center;
       margin-left: auto;
       padding: 0 10px;
+      border-radius: 6px;
+      color: #fff !important;
+      background: #e65100;
+      box-shadow: 0 6px 18px rgba(32, 18, 16, .18);
       font-size: 13px;
+      text-shadow: none !important;
+    }
+
+    .bramajump-clean-nav__phone--mobile:hover,
+    .bramajump-clean-nav__phone--mobile:focus-visible {
+      background: #c94300;
     }
 
     .bramajump-clean-nav__toggle {
@@ -742,6 +762,14 @@ margin: 0rem !important;
     .bramajump-clean-nav__links a {
       text-shadow: none;
     }
+
+    .bramajump-clean-nav__actions {
+      display: contents;
+    }
+
+    .bramajump-clean-nav__phone--desktop {
+      display: none;
+    }
   }
 
   @media (max-width: 360px) {
@@ -753,7 +781,7 @@ margin: 0rem !important;
       font-size: 21px;
     }
 
-    .bramajump-clean-nav__phone {
+    .bramajump-clean-nav__phone--mobile {
       padding: 0 7px;
       font-size: 12px;
     }
@@ -930,7 +958,7 @@ margin: 0rem !important;
     if (!document.querySelector('.bramajump-clean-nav')) {
       var nav = document.createElement('header');
       nav.className = 'bramajump-clean-nav';
-      nav.innerHTML = '<div class="bramajump-clean-nav__inner"><a class="bramajump-clean-nav__brand" href="#top">BRAMAJUMP</a><a class="bramajump-clean-nav__phone" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a><button class="bramajump-clean-nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="bramajump-clean-nav__links" aria-label="Navigation principale"><a href="#tarifs">Tarifs</a><a href="#decouverte">Comment ça marche ?</a><a href="#infos">Infos pratique</a><a href="#demande">Contact</a><a class="bramajump-clean-nav__cta" href="#reserve">Réserver</a></nav></div>';
+      nav.innerHTML = '<div class="bramajump-clean-nav__inner"><a class="bramajump-clean-nav__brand" href="#top">BRAMAJUMP</a><a class="bramajump-clean-nav__phone bramajump-clean-nav__phone--mobile" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a><button class="bramajump-clean-nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="bramajump-clean-nav__links" aria-label="Navigation principale"><a href="#tarifs">Tarifs</a><a href="#decouverte">Comment ça marche ?</a><a href="#infos">Infos pratique</a><a href="#demande">Contact</a><span class="bramajump-clean-nav__actions"><a class="bramajump-clean-nav__cta" href="#reserve">Réserver</a><a class="bramajump-clean-nav__phone bramajump-clean-nav__phone--desktop" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a></span></nav></div>';
       document.body.prepend(nav);
     }
 
