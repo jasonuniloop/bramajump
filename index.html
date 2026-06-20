@@ -729,6 +729,14 @@ margin: 0rem !important;
     text-shadow: none;
   }
 
+  .section_prix,
+  .section_decouverte,
+  .section_infos,
+  .section_contact,
+  .section_reservation {
+    scroll-margin-top: 96px;
+  }
+
   @media (max-width: 991px) {
     .bramajump-clean-nav__inner {
       min-height: 66px;
@@ -1040,9 +1048,46 @@ margin: 0rem !important;
       });
 
       cleanNav.addEventListener('click', function (event) {
-        if (event.target && event.target.tagName === 'A') {
-          cleanNav.classList.remove('is-open');
-          cleanToggle.setAttribute('aria-expanded', 'false');
+        var link = event.target && event.target.closest && event.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        var destinations = {
+          '#tarifs': '.section_prix',
+          '#decouverte': '.section_decouverte',
+          '#infos': '.section_infos',
+          '#demande': '.section_contact',
+          '#reserve': '.section_reservation',
+          '#top': '.section_hero'
+        };
+        var hash = link.getAttribute('href');
+        var target = document.querySelector(destinations[hash] || hash);
+        if (!target) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        cleanNav.classList.remove('is-open');
+        cleanToggle.setAttribute('aria-expanded', 'false');
+
+        target.querySelectorAll('.bramajump-reveal').forEach(function (element) {
+          element.classList.add('is-visible');
+        });
+
+        function alignTarget() {
+          var headerHeight = cleanNav.getBoundingClientRect().height;
+          var targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+          var previousScrollBehavior = document.documentElement.style.scrollBehavior;
+          document.documentElement.style.scrollBehavior = 'auto';
+          window.scrollTo(0, Math.max(0, targetTop));
+          document.documentElement.style.scrollBehavior = previousScrollBehavior;
+        }
+
+        alignTarget();
+        [100, 350, 900].forEach(function (delay) {
+          window.setTimeout(alignTarget, delay);
+        });
+
+        if (history.replaceState) {
+          history.replaceState(null, '', hash);
         }
       });
     }
