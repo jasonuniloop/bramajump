@@ -1232,41 +1232,19 @@ margin: 0rem !important;
 
     var contactForm = document.querySelector('form[name="bramajump-contact"]');
     if (contactForm) {
-      contactForm.addEventListener('submit', async function (event) {
+      contactForm.setAttribute('action', '/merci');
+      contactForm.addEventListener('submit', function (event) {
         event.preventDefault();
         event.stopImmediatePropagation();
 
-        var wrapper = contactForm.closest('.w-form');
-        var success = wrapper && wrapper.querySelector('.w-form-done');
-        var error = wrapper && wrapper.querySelector('.w-form-fail');
         var submit = contactForm.querySelector('[type="submit"]');
-        var originalValue = submit && submit.value;
 
         if (submit) {
           submit.disabled = true;
           submit.value = submit.getAttribute('data-wait') || 'Veuillez patienter...';
         }
-        if (error) error.style.display = 'none';
 
-        try {
-          var formData = new FormData(contactForm);
-          var response = await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-          });
-          if (!response.ok) throw new Error('Form submission failed');
-
-          contactForm.reset();
-          contactForm.style.display = 'none';
-          if (success) success.style.display = 'block';
-        } catch (submissionError) {
-          if (error) error.style.display = 'block';
-          if (submit) {
-            submit.disabled = false;
-            submit.value = originalValue;
-          }
-        }
+        contactForm.submit();
       }, true);
     }
 
