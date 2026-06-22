@@ -826,6 +826,308 @@ margin: 0rem !important;
     overflow: visible !important;
   }
 
+  .bramajump-night {
+    position: relative;
+    padding: 96px 24px;
+    overflow: hidden;
+    color: #f8f1e6;
+    background: #201210;
+  }
+
+  .bramajump-night__inner {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+  }
+
+  .bramajump-night__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 42px;
+  }
+
+  .bramajump-night__eyebrow {
+    margin: 0 0 14px;
+    color: #efb16c;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .bramajump-night__title {
+    max-width: 760px;
+    margin: 0;
+    color: #fff;
+    font-family: Oswald, Arial, sans-serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 700;
+    line-height: .98;
+    text-transform: uppercase;
+  }
+
+  .bramajump-night__lead {
+    margin: 0;
+    color: #e7d9cb;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .bramajump-night__media {
+    display: grid;
+    grid-template-columns: minmax(210px, .3fr) minmax(0, .7fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  .bramajump-night__photo,
+  .bramajump-night__video {
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #0e0908;
+  }
+
+  .bramajump-night__photo {
+    aspect-ratio: .763;
+    height: auto;
+    object-position: center 38%;
+  }
+
+  .bramajump-night__video {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .bramajump-night__details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 400px);
+    gap: 54px;
+    align-items: center;
+    margin-top: 42px;
+  }
+
+  .bramajump-night__copy h3 {
+    margin: 0 0 14px;
+    color: #fff;
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 32px;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .bramajump-night__copy p {
+    margin: 0;
+    color: #e7d9cb;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .bramajump-night__included {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .bramajump-night__included span {
+    display: flex;
+    min-height: 58px;
+    align-items: center;
+    padding: 12px 14px;
+    border-left: 3px solid #e65100;
+    color: #fff;
+    background: rgba(255, 255, 255, .055);
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .bramajump-night__included-highlight {
+    border-left: 0 !important;
+    justify-content: center;
+    color: #fff !important;
+    background: #e65100 !important;
+    box-shadow: 0 8px 20px rgba(230, 81, 0, .24);
+    font-size: 15px !important;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .bramajump-night__availability {
+    padding: 24px;
+    border: 1px solid rgba(239, 177, 108, .45);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .045);
+  }
+
+  .bramajump-night__availability-label {
+    margin: 0 0 8px;
+    color: #efb16c;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .bramajump-night__prices {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .bramajump-night__price {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 11px 12px;
+    border-radius: 6px;
+    color: #fff;
+    background: rgba(255, 255, 255, .055);
+  }
+
+  .bramajump-night__price strong {
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .bramajump-night__price span {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .bramajump-night__price--closed {
+    color: #cdbdaf;
+    background: rgba(255, 255, 255, .025);
+  }
+
+  .bramajump-night__price--closed strong {
+    color: #efb16c;
+    font-size: 22px;
+  }
+
+  .bramajump-night__count {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .bramajump-night__count strong {
+    color: #fff;
+    font-family: Oswald, Arial, sans-serif;
+    font-size: 72px;
+    line-height: .9;
+  }
+
+  .bramajump-night__count span {
+    max-width: 150px;
+    color: #f8f1e6;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .bramajump-night__slots {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .bramajump-night__slot {
+    height: 7px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, .15);
+  }
+
+  .bramajump-night__slot.is-available {
+    background: #e65100;
+  }
+
+  .bramajump-night__call {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 6px;
+    color: #fff;
+    background: #e65100;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: background-color .2s ease, transform .2s ease;
+  }
+
+  .bramajump-night__call:hover,
+  .bramajump-night__call:focus-visible {
+    background: #c94300;
+    transform: translateY(-1px);
+  }
+
+  .bramajump-night__fineprint {
+    margin: 12px 0 0;
+    color: #cdbdaf;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 767px) {
+    .bramajump-night {
+      padding: 72px 16px;
+    }
+
+    .bramajump-night__intro,
+    .bramajump-night__details {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .bramajump-night__title {
+      font-size: 48px;
+    }
+
+    .bramajump-night__media {
+      grid-template-columns: 1fr;
+    }
+
+    .bramajump-night__photo {
+      aspect-ratio: 16 / 9;
+      height: auto;
+    }
+
+    .bramajump-night__video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .bramajump-night__availability {
+      padding: 20px;
+    }
+
+    .bramajump-night__included {
+      grid-template-columns: 1fr;
+    }
+
+    .bramajump-night__call {
+      width: 100%;
+    }
+  }
+
   .section_reservation,
   .section_reservation .div-block-4 {
     width: 100% !important;
@@ -1027,8 +1329,75 @@ margin: 0rem !important;
     if (!document.querySelector('.bramajump-clean-nav')) {
       var nav = document.createElement('header');
       nav.className = 'bramajump-clean-nav';
-      nav.innerHTML = '<div class="bramajump-clean-nav__inner"><a class="bramajump-clean-nav__brand" href="#top">BRAMAJUMP</a><a class="bramajump-clean-nav__phone bramajump-clean-nav__phone--mobile" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a><button class="bramajump-clean-nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="bramajump-clean-nav__links" aria-label="Navigation principale"><a href="#tarifs">Tarifs</a><a href="#decouverte">Comment ça marche ?</a><a href="#infos">Infos pratique</a><a href="#demande">Contact</a><span class="bramajump-clean-nav__actions"><a class="bramajump-clean-nav__cta" href="#reserve">Réserver</a><a class="bramajump-clean-nav__phone bramajump-clean-nav__phone--desktop" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a></span></nav></div>';
+      nav.innerHTML = '<div class="bramajump-clean-nav__inner"><a class="bramajump-clean-nav__brand" href="#top">BRAMAJUMP</a><a class="bramajump-clean-nav__phone bramajump-clean-nav__phone--mobile" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a><button class="bramajump-clean-nav__toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="bramajump-clean-nav__links" aria-label="Navigation principale"><a href="#tarifs">Tarifs</a><a href="#decouverte">Comment ça marche ?</a><a href="#nuit-filet">Nuit suspendue</a><a href="#infos">Infos pratique</a><a href="#demande">Contact</a><span class="bramajump-clean-nav__actions"><a class="bramajump-clean-nav__cta" href="#reserve">Réserver</a><a class="bramajump-clean-nav__phone bramajump-clean-nav__phone--desktop" href="tel:+33786294947" aria-label="Appeler Bramajump au 07 86 29 49 47">07 86 29 49 47</a></span></nav></div>';
       document.body.prepend(nav);
+    }
+
+    if (!document.querySelector('.bramajump-night')) {
+      var nightSection = document.createElement('section');
+      nightSection.className = 'bramajump-night';
+      nightSection.id = 'nuit-filet';
+      nightSection.setAttribute('data-nights-remaining', '4');
+      nightSection.setAttribute('data-nights-total', '6');
+      nightSection.innerHTML = `
+        <div class="bramajump-night__inner">
+          <div class="bramajump-night__intro">
+            <div>
+              <p class="bramajump-night__eyebrow">Une expérience Bramajump en édition très limitée</p>
+              <h2 class="bramajump-night__title">Passe la nuit dans le filet</h2>
+            </div>
+            <p class="bramajump-night__lead">Quand le dernier saut se termine, l'aventure continue. Installe-toi dans le spacenet suspendu au-dessus de l'Abîme de Bramabiau et vis une nuit que presque personne n'aura la chance de connaître.</p>
+          </div>
+          <div class="bramajump-night__media">
+            <img class="bramajump-night__photo" src="/assets/images/nuit-filet-bramajump.webp" alt="Deux personnes installées dans le filet suspendu au-dessus de l'Abîme de Bramabiau" loading="lazy">
+            <video class="bramajump-night__video" controls preload="metadata" playsinline poster="/assets/images/nuit-insolite-bramajump-2026-poster.webp">
+              <source src="/assets/images/nuit-insolite-bramajump-2026-web.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="bramajump-night__details">
+            <div class="bramajump-night__copy">
+              <h3>Une nuit complète au-dessus du vide</h3>
+              <p>L'expérience est proposée sur seulement six nuits. Après une nuit dans le spacenet, profite d'un petit déjeuner au réveil avant de vivre ton saut pendulaire. La réservation se fait directement par téléphone : les premières personnes qui appellent sont les premières à pouvoir réserver.</p>
+              <div class="bramajump-night__included">
+                <span>Nuit dans le filet suspendu</span>
+                <span>Petit déjeuner le matin</span>
+                <span class="bramajump-night__included-highlight">Un saut inclus par personne</span>
+              </div>
+            </div>
+            <div class="bramajump-night__availability" aria-live="polite">
+              <p class="bramajump-night__availability-label">Disponibilités</p>
+              <div class="bramajump-night__prices" aria-label="Tarifs des nuits suspendues">
+                <div class="bramajump-night__price"><strong>350 €</strong><span>Pour une ou deux personnes, du lundi au jeudi soir</span></div>
+                <div class="bramajump-night__price"><strong>400 €</strong><span>Pour une ou deux personnes, le vendredi et le dimanche soir</span></div>
+                <div class="bramajump-night__price bramajump-night__price--closed"><strong>Fermé</strong><span>Pas de nuit suspendue le samedi</span></div>
+              </div>
+              <div class="bramajump-night__count"><strong>4</strong><span>nuits encore réservables</span></div>
+              <div class="bramajump-night__slots" aria-hidden="true"></div>
+              <a class="bramajump-night__call" href="tel:+33786294947">Appeler le 07 86 29 49 47</a>
+              <p class="bramajump-night__fineprint">Réservation uniquement par téléphone, dans l'ordre des appels.</p>
+            </div>
+          </div>
+        </div>`;
+
+      var reservationSection = document.querySelector('.section_reservation');
+      if (reservationSection) {
+        reservationSection.parentNode.insertBefore(nightSection, reservationSection);
+      }
+
+      var total = Math.max(1, Number(nightSection.getAttribute('data-nights-total')) || 6);
+      var remaining = Math.max(0, Math.min(total, Number(nightSection.getAttribute('data-nights-remaining')) || 0));
+      var count = nightSection.querySelector('.bramajump-night__count strong');
+      var countLabel = nightSection.querySelector('.bramajump-night__count span');
+      var slots = nightSection.querySelector('.bramajump-night__slots');
+      if (count) count.textContent = String(remaining);
+      if (countLabel) countLabel.textContent = remaining > 1 ? 'nuits encore réservables' : remaining === 1 ? 'nuit encore réservable' : 'nuit disponible';
+      if (slots) {
+        for (var slotIndex = 0; slotIndex < total; slotIndex += 1) {
+          var slot = document.createElement('span');
+          slot.className = 'bramajump-night__slot' + (slotIndex < remaining ? ' is-available' : '');
+          slots.appendChild(slot);
+        }
+      }
     }
 
     var cleanNav = document.querySelector('.bramajump-clean-nav');
@@ -1054,6 +1423,7 @@ margin: 0rem !important;
         var destinations = {
           '#tarifs': '.section_prix',
           '#decouverte': '.section_decouverte',
+          '#nuit-filet': '.bramajump-night',
           '#infos': '.section_infos',
           '#demande': '.section_contact',
           '#reserve': '.section_reservation',
