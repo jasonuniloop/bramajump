@@ -907,6 +907,7 @@ margin: 0rem !important;
 
   .bramajump-youtube-video iframe {
     position: absolute;
+    z-index: 2;
     inset: 0;
     width: 100%;
     height: 100%;
@@ -1197,18 +1198,21 @@ margin: 0rem !important;
   }
 
   .bramajump-hero-video-card {
+    position: relative;
     min-width: 0;
+    isolation: isolate;
   }
 
   .bramajump-hero-video-label {
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    z-index: 10;
+    top: 18px;
+    left: -12px;
     display: flex;
     min-height: 60px;
     align-items: center;
     gap: 18px;
     width: fit-content;
-    margin-bottom: -4px;
     padding: 12px 24px 13px;
     color: #ff8a3d;
     font-family: Oswald, Arial, sans-serif;
@@ -1219,7 +1223,6 @@ margin: 0rem !important;
     text-shadow: 0 2px 8px rgba(32, 18, 16, .75);
     text-transform: uppercase;
     isolation: isolate;
-    animation: bramajump-choice-in .75s .65s cubic-bezier(.22, 1, .36, 1) both;
     transition: transform .25s cubic-bezier(.22, 1, .36, 1), filter .25s ease;
   }
 
@@ -1231,11 +1234,15 @@ margin: 0rem !important;
     background:
       linear-gradient(92deg, rgba(56, 29, 23, .98), rgba(128, 49, 20, .98) 68%, #e65100);
     clip-path: polygon(1% 18%, 12% 6%, 31% 12%, 49% 2%, 66% 13%, 84% 5%, 100% 22%, 96% 83%, 78% 94%, 59% 87%, 39% 98%, 19% 88%, 2% 96%);
-    filter: drop-shadow(0 9px 12px rgba(32, 18, 16, .34));
+    filter:
+      drop-shadow(0 9px 12px rgba(32, 18, 16, .45))
+      drop-shadow(0 0 8px rgba(230, 81, 0, .24));
     transform: rotate(-1deg);
   }
 
   .bramajump-hero-video-label--right {
+    right: -12px;
+    left: auto;
     margin-left: auto;
     justify-content: flex-end;
     text-align: right;
@@ -1283,22 +1290,15 @@ margin: 0rem !important;
     }
   }
 
-  @keyframes bramajump-choice-in {
-    from {
-      opacity: 0;
-      transform: translateY(18px) scale(.94);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
   .bramajump-hero-video-card .video,
   .bramajump-hero-night-media,
   .bramajump-hero-night-video {
+    position: relative;
+    z-index: 1;
     width: 100% !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     border: 2px solid rgba(50, 28, 23, .9);
     border-radius: 4px;
     box-shadow: 0 14px 28px rgba(50, 28, 23, .18);
@@ -1330,22 +1330,48 @@ margin: 0rem !important;
     }
 
     .bramajump-hero-video-label {
-      min-height: 46px;
-      margin-bottom: -3px;
-      padding: 10px 16px 11px;
-      font-size: 22px;
+      top: 12px;
+      right: auto;
+      left: 50%;
+      min-height: 40px;
+      max-width: calc(100% - 10px);
+      gap: 10px;
+      padding: 8px 12px 9px;
+      font-size: 18px;
+      transform: translateX(-50%);
+    }
+
+    .bramajump-hero-video-label--right {
+      right: auto;
+      left: 50%;
     }
 
     .bramajump-hero-video-arrow {
-      width: 44px;
-      height: 18px;
-      flex-basis: 44px;
+      width: 36px;
+      height: 15px;
+      flex-basis: 36px;
+      border-bottom-width: 3px;
+    }
+
+    .bramajump-hero-video-arrow::after {
+      width: 9px;
+      height: 9px;
+      border-right-width: 3px;
+      border-bottom-width: 3px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .bramajump-hero-video-label:hover,
+      .bramajump-hero-video-label:focus-visible {
+        transform: translateX(-50%) translateY(-3px) scale(1.025);
+      }
     }
   }
 
   .bramajump-video-lazy,
   .bramajump-night-video-lazy {
     position: absolute;
+    z-index: 2;
     inset: 0;
     display: grid;
     width: 100%;
@@ -1400,7 +1426,6 @@ margin: 0rem !important;
     .bramajump-video-lazy:hover img,
     .bramajump-night-video-lazy:hover img {
       filter: brightness(.72);
-      transform: scale(1.015);
     }
 
     .bramajump-video-lazy:hover span,
@@ -1480,6 +1505,19 @@ margin: 0rem !important;
     transform: translate3d(0, 0, 0) !important;
   }
 
+  .bramajump-hero-video-card--jump.bramajump-home-reveal {
+    transform: translate3d(-70px, 30px, 0) scale(.96) !important;
+  }
+
+  .bramajump-hero-video-card--night.bramajump-home-reveal {
+    transform: translate3d(70px, 30px, 0) scale(.96) !important;
+  }
+
+  .bramajump-hero-video-card--jump.bramajump-home-reveal.is-visible,
+  .bramajump-hero-video-card--night.bramajump-home-reveal.is-visible {
+    transform: translate3d(0, 0, 0) scale(1) !important;
+  }
+
   .bramajump-reveal.is-visible {
     opacity: 1 !important;
     transform: translate3d(0, 0, 0) !important;
@@ -1502,6 +1540,10 @@ margin: 0rem !important;
     .bramajump-reveal.is-visible,
     .bramajump-home-reveal,
     .bramajump-home-reveal.is-visible,
+    .bramajump-hero-video-card--jump.bramajump-home-reveal,
+    .bramajump-hero-video-card--night.bramajump-home-reveal,
+    .bramajump-hero-video-card--jump.bramajump-home-reveal.is-visible,
+    .bramajump-hero-video-card--night.bramajump-home-reveal.is-visible,
     .section_hero .heading.bramajump-home-reveal,
     .section_hero .heading.bramajump-home-reveal.is-visible {
       opacity: 1 !important;
@@ -1607,11 +1649,11 @@ margin: 0rem !important;
         heroVideos.className = 'bramajump-hero-videos';
 
         var jumpCard = document.createElement('div');
-        jumpCard.className = 'bramajump-hero-video-card bramajump-hero-video-card--jump';
+        jumpCard.className = 'bramajump-hero-video-card bramajump-hero-video-card--jump bramajump-home-reveal';
         jumpCard.innerHTML = '<a class="bramajump-hero-video-label bramajump-hero-video-label--left" href="#tarifs" aria-label="Voir les tarifs du saut pendulaire"><span>Le saut pendulaire</span><span class="bramajump-hero-video-arrow" aria-hidden="true"></span></a>';
 
         var nightCard = document.createElement('div');
-        nightCard.className = 'bramajump-hero-video-card bramajump-hero-video-card--night';
+        nightCard.className = 'bramajump-hero-video-card bramajump-hero-video-card--night bramajump-home-reveal';
         nightCard.innerHTML = '<a class="bramajump-hero-video-label bramajump-hero-video-label--right" href="#nuit-filet" aria-label="Découvrir la nuit insolite"><span class="bramajump-hero-video-arrow" aria-hidden="true"></span><span>La nuit insolite</span></a><div class="bramajump-hero-night-media bramajump-youtube-video"><button type="button" class="bramajump-night-video-lazy" data-youtube-id="_Rjs2yNEEso" aria-label="Lire la vidéo de la nuit insolite"><img src="/assets/images/nuit-insolite-bramajump-2026-poster.webp" alt="" loading="eager"><span>Lire la vidéo</span></button></div>';
 
         jumpVideo.parentNode.insertBefore(heroVideos, jumpVideo);
@@ -1684,20 +1726,26 @@ margin: 0rem !important;
     }
 
     function setupHomeIntro() {
-      var items = [
+      var introItems = [
         document.querySelector('.section_hero .heading-2'),
         document.querySelector('.section_hero .logo'),
-        document.querySelector('.section_hero .bramajump-hero-video-card--jump'),
-        document.querySelector('.section_hero .bramajump-hero-video-card--night'),
         document.querySelector('.section_hero .heading')
       ].filter(Boolean);
+      var jumpCard = document.querySelector('.section_hero .bramajump-hero-video-card--jump');
+      var nightCard = document.querySelector('.section_hero .bramajump-hero-video-card--night');
+      var cards = [jumpCard, nightCard].filter(Boolean);
+      var items = introItems.concat(cards);
 
       items.forEach(function (element, index) {
         element.classList.add('bramajump-home-reveal');
         element.style.removeProperty('opacity');
         element.style.removeProperty('transform');
-        var delay = index === items.length - 1 ? 760 : index * 140;
+        var delay = index * 140;
         element.style.setProperty('--bramajump-home-delay', delay + 'ms');
+      });
+
+      cards.forEach(function (card) {
+        card.style.setProperty('--bramajump-home-delay', '0ms');
       });
 
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -1714,6 +1762,30 @@ margin: 0rem !important;
         return;
       }
 
+      window.setTimeout(function () {
+        if (jumpCard) jumpCard.classList.add('is-visible');
+      }, 700);
+
+      if (window.matchMedia && window.matchMedia('(min-width: 768px)').matches) {
+        window.setTimeout(function () {
+          if (nightCard) nightCard.classList.add('is-visible');
+        }, 1350);
+      } else if (nightCard && 'IntersectionObserver' in window) {
+        var nightObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            window.setTimeout(function () {
+              nightCard.classList.add('is-visible');
+            }, 180);
+            nightObserver.disconnect();
+          });
+        }, {
+          rootMargin: '0px 0px -12% 0px',
+          threshold: 0.45
+        });
+        nightObserver.observe(nightCard);
+      }
+
       var homeObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
@@ -1721,11 +1793,11 @@ margin: 0rem !important;
           homeObserver.unobserve(entry.target);
         });
       }, {
-        rootMargin: '0px 0px -8% 0px',
-        threshold: 0.18
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.55
       });
 
-      items.forEach(function (element) {
+      introItems.forEach(function (element) {
         homeObserver.observe(element);
       });
     }
