@@ -1,0 +1,18 @@
+.git/
+.netlify/
+node_modules/
+tools/
+Bramajump 2025/
+Bramajump 2026/
+diplome/
+Documents administratifs/
+Medias pendulaire/
+Partenaires/
+Ressources techniques/
+site web/
+assets/docs/
+package.json
+package-lock.json
+*.tmp
+index.optimized-custom.html
+index.webflow-original.html
