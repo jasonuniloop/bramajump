@@ -900,15 +900,18 @@ margin: 0rem !important;
 
   .bramajump-night__video {
     position: relative;
-    aspect-ratio: 16 / 9;
-    height: auto;
+    height: 0;
+    padding-top: 56.25%;
     overflow: hidden;
   }
 
   .bramajump-youtube-video iframe {
     position: absolute;
     z-index: 2;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: 0;
@@ -1123,7 +1126,8 @@ margin: 0rem !important;
     }
 
     .bramajump-night__video {
-      aspect-ratio: 16 / 9;
+      height: 0;
+      padding-top: 56.25%;
     }
 
     .bramajump-night__availability {
@@ -1307,7 +1311,8 @@ margin: 0rem !important;
 
   .bramajump-hero-night-media {
     position: relative;
-    aspect-ratio: 16 / 9;
+    height: 0;
+    padding-top: 56.25%;
     overflow: hidden;
   }
 
@@ -1372,7 +1377,10 @@ margin: 0rem !important;
   .bramajump-night-video-lazy {
     position: absolute;
     z-index: 2;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: grid;
     width: 100%;
     height: 100%;
@@ -1591,7 +1599,7 @@ margin: 0rem !important;
             <img class="bramajump-night__photo" src="/assets/images/nuit-filet-bramajump.webp" alt="Deux personnes installées dans le filet suspendu au-dessus de l'Abîme de Bramabiau" loading="lazy">
             <div class="bramajump-night__video bramajump-youtube-video">
               <button type="button" class="bramajump-night-video-lazy" data-youtube-id="_Rjs2yNEEso" aria-label="Lire la vidéo de la nuit insolite">
-                <img src="/assets/images/nuit-insolite-bramajump-2026-poster.webp" alt="" loading="lazy">
+                <img src="/assets/images/nuit-insolite-bramajump-2026-poster.jpg" alt="" loading="lazy">
                 <span>Lire la vidéo</span>
               </button>
             </div>
@@ -1654,7 +1662,7 @@ margin: 0rem !important;
 
         var nightCard = document.createElement('div');
         nightCard.className = 'bramajump-hero-video-card bramajump-hero-video-card--night bramajump-home-reveal';
-        nightCard.innerHTML = '<a class="bramajump-hero-video-label bramajump-hero-video-label--right" href="#nuit-filet" aria-label="Découvrir la nuit insolite"><span class="bramajump-hero-video-arrow" aria-hidden="true"></span><span>La nuit insolite</span></a><div class="bramajump-hero-night-media bramajump-youtube-video"><button type="button" class="bramajump-night-video-lazy" data-youtube-id="_Rjs2yNEEso" aria-label="Lire la vidéo de la nuit insolite"><img src="/assets/images/nuit-insolite-bramajump-2026-poster.webp" alt="" loading="eager"><span>Lire la vidéo</span></button></div>';
+        nightCard.innerHTML = '<a class="bramajump-hero-video-label bramajump-hero-video-label--right" href="#nuit-filet" aria-label="Découvrir la nuit insolite"><span class="bramajump-hero-video-arrow" aria-hidden="true"></span><span>La nuit insolite</span></a><div class="bramajump-hero-night-media bramajump-youtube-video"><button type="button" class="bramajump-night-video-lazy" data-youtube-id="_Rjs2yNEEso" aria-label="Lire la vidéo de la nuit insolite"><img src="/assets/images/nuit-insolite-bramajump-2026-poster.jpg" alt="" loading="eager"><span>Lire la vidéo</span></button></div>';
 
         jumpVideo.parentNode.insertBefore(heroVideos, jumpVideo);
         jumpCard.appendChild(jumpVideo);
